@@ -24,7 +24,7 @@ const Footer = () => {
     },
     { 
       name: 'GitHub', 
-      href: 'https://github.com/prakhar-dhakar',
+      href: 'https://github.com/riverset',
       icon: <FiGithub className="w-6 h-6" />
     }
   ]
