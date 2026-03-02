@@ -57,9 +57,9 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed relative z-10"
+            className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed relative z-10"
           >
-            Software engineer proficient in maintaining, developing and deploying software, ML systems on the edge and cloud
+            Software Engineer with experience of designing and deploying high-performance, cloud-native software systems and distributed data pipelines across AWS/GCP. Adept at Golang, Python, Java and orchestrating microservices with Kubernetes
           </motion.p>
 
           <motion.div

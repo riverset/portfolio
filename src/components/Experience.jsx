@@ -4,62 +4,53 @@ import { BriefcaseIcon } from '@heroicons/react/24/outline'
 const Experience = () => {
   const experiences = [
     {
-      title: 'Software Engineer',
+      title: 'Software Engineer 3',
       company: 'JP Morgan Chase',
       location: 'Bengaluru, India',
-      period: 'July 2023 – present',
+      period: 'July 2023 – Present',
       achievements: [
-        'Designed and implemented transformations and pipeline modules for a cloud-agnostic feature store, enabling seamless feature processing across diverse cloud providers (e.g., AWS, GCP)',
-        'Extended data ingestion capabilities by integrating Apache Beam pipelines with sources like Google PubSub, BigQuery, and CockroachDB, broadening data accessibility by supporting various file formats (CSV, Avro, Parquet, JSON)',
-        'Pioneered seamless Python UDF integration in the Java Beam pipeline, leveraging a custom python expansion service, bridging the data science and core Java processing gap'
+        'Scalable Feature Platform: Core contributor to a multi-tenant platform in Go sustaining 15k RPS at P99 4ms via Redis-backed precomputation and Apache Pinot for on-demand aggregation (<200ms)',
+        'Architecture Benchmarking: Led evaluation of feature-compute backends; benchmarked InfluxDB, TimescaleDB, and CockroachDB before converging on Pinot with indexed feature-group partitioning to eliminate scale-driven latency throttling, for read time compute features',
+        'Infrastructure Isolation: Contributed to a feature-group isolation model (dedicated Kafka topics, Redis clusters, and Pinot, BigQuery tables), improving multi-tenant scalability and operational containment',
+        'Zero-Trust AuthZ (Lead): Designed and rolled out an in-house authorization platform using OPA (Rego) with Istio/Envoy ext authz, replacing a decommissioned SaaS; secured 5 services (~800 peak RPS) with default-deny enforcement',
+        'Observability & Compliance: Balanced strict financial logging requirements with latency constraints (~20ms overhead), introducing staged E2E validation to ensure zero-regression policy rollouts',
+        'Treasury Settlement: Implemented a settlement service (Java/Spring Boot) processing 10k daily inter-bank settlement transactions; enforced idempotency keys and unique constraints to maintain financial correctness across LAC cycles',
+        'Martech CDP: Identified 1% silent data loss in an events pipeline (1M events/day); built an AWS Glue (PySpark) ID-diff reconciliation mechanism, restoring event integrity and enabling daily loss attribution',
+        'Authored design documents and reviewed cross-team infrastructure proposals for critical treasury and authentication systems'
       ]
     },
     {
-      title: 'ML Engineer',
+      title: 'Software Engineer - ML',
       company: 'ExaWizards Inc',
       location: 'Hyderabad, India',
-      period: 'July 2021 – Jun 2023',
+      period: 'July 2021 – June 2023',
       subtitle: 'Japan based firm specializing in development of AI-enabled services',
       achievements: [
         'Led development of major features in ATP (Auto-Training-Pipeline), an AI pipeline utilizing micro-services architecture to create Synthetic Data using Unity3D, train ML Algorithms, and deploy them on the cloud',
         'Reduced ATP\'s running costs by 70% through AWS resource migration, enabling scalable multi-user access',
-        'Built vision models using the U-Net architecture to predict depth image noises and trained Cycle-GAN models to simulate RGB noises, improving the realism of synthetic images',
-        'Contributed to the development of a real-time software pipeline for pick-and-place robots, incorporating a deep learning-based perception system and deploying it on a UR5e robot using ROS, MoveIt, gRPC, and Docker',
-        'Supervised internship students to build a Cloud Infrastructure Management repository, automating cloud resources management using Terraform and a Github Actions CI-CD pipeline'
+        'Leveraged AWS Batch with custom AMIs to execute the synthetic image generation pipeline in the cloud and utilized AWS SageMaker for model training and deployment to end-users',
+        'Contributed to the development of a real-time software pipeline for pick-and-place robots, incorporating a deep learning-based perception system and deploying it on a UR5e robot using ROS, MoveIt, gRPC, and Docker'
       ]
     },
     {
-      title: 'AI Engineer',
+      title: 'ML Intern, Vision Tech Group',
       company: 'ExaWizards Inc',
-      location: 'Remote',
+      location: 'Tokyo/Remote',
       period: 'Apr 2020 – Aug 2020',
       achievements: [
         'Achieved 97% accuracy in predicting relative height, with a 5% error margin, using an InceptionV3 network with LDL (Label Distribution Learning) and Expectation Regression',
         'Proposed a new method for pre-processing images that reduced joint loss by 7% in a pose estimation algorithm',
-        'Built a ResNet based classifier with 93% accuracy to differentiate between children and adults, to be integrated into an AI camera product: Milcube'
+        'Trained a ResNet-based classifier with 93% accuracy to differentiate between children and adults, to be integrated into an AI camera product'
       ]
-    },
+    }
+  ]
+
+  const education = [
     {
-      title: 'Student Researcher',
-      company: 'Concordia University',
-      location: 'Montreal, Canada',
-      period: 'Jun 2020 – Sept 2020',
-      subtitle: 'Research Intern under Dr. Mazdak Nik-Bakht',
-      achievements: [
-        'Analyzed citizens\' comfort levels in different areas surrounding Montreal using mined comments and reviews from websites like Trip Advisor, Twitter, and Plantogether.city',
-        'Utilized NLP techniques, including LDA, BERT, and sentiment analysis, to extract valuable insights from data'
-      ]
-    },
-    {
-      title: 'Data Scientist',
-      company: 'Elucidata',
-      location: 'New Delhi, India',
-      period: 'May 2019 – July 2019',
-      subtitle: 'Biomedical data company that provides curated biomolecular data prepared for ML applications',
-      achievements: [
-        'Automated Omics data pipelines, reducing analysis time from days to minutes for Data Scientists',
-        'Implemented the Abstract Factory Pattern to deliver a Shiny app written in Python and R, ensuring scalability and reproducibility'
-      ]
+      institution: 'Indian Institute Of Technology Kanpur',
+      degree: 'Bachelor of Technology in Material Science and Engineering',
+      rank: 'Dept. Rank 1, CPI: 8.7/10.0',
+      period: 'July 2017 – May 2021'
     }
   ]
 
@@ -121,6 +112,35 @@ const Experience = () => {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div variants={itemVariants} className="text-center mt-12">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Education
+            </h2>
+          </motion.div>
+
+          <div className="space-y-8">
+            {education.map((edu, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="bg-white/80 dark:bg-gray-800/80 rounded-2xl p-8 shadow-xl backdrop-blur-sm"
+              >
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between items-start flex-wrap gap-2">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">{edu.institution}</h3>
+                      <span className="text-indigo-600 dark:text-indigo-400 font-medium">{edu.period}</span>
+                    </div>
+                    <div className="text-lg font-semibold text-gray-700 dark:text-gray-300">{edu.degree}</div>
+                    {edu.rank && (
+                      <div className="text-md text-gray-600 dark:text-gray-400">{edu.rank}</div>
+                    )}
                   </div>
                 </div>
               </motion.div>

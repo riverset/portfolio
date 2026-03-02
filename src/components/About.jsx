@@ -4,8 +4,8 @@ import { CodeBracketIcon } from '@heroicons/react/24/outline'
 const About = () => {
   const skills = {
     'Languages': ['Go', 'Python', 'Java', 'C++', 'Bash'],
-    'Tools & Technologies': ['GCP', 'AWS', 'Pytorch', 'Tensorflow', 'Beam', 'OpenCV', 'Docker', 'gRPC', 'Ansible', 'Git'],
-    'Interests': ['Distributed Systems', 'ML Ops', 'Federated Learning', 'F1']
+    'Cloud and Data': ['AWS', 'GCP', 'Docker', 'Kubernetes', 'Apache Flink', 'Spark', 'Iceberg', 'Pub/Sub', 'gRPC'],
+    'Additional Tools': ['Terraform', 'OpenCV', 'Git', 'PyTorch', 'TensorFlow']
   }
 
   const containerVariants = {
